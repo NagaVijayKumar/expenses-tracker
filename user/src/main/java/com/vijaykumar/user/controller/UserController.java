@@ -1,15 +1,22 @@
 package com.vijaykumar.user.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.vijaykumar.user.dto.UserDto;
+import com.vijaykumar.user.model.User;
+import com.vijaykumar.user.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/user")
 public class UserController {
 
-    @GetMapping("/check")
-    private String check(){
-        return "running on port 8081";
+    @Autowired
+    UserService userService;
+
+    @PostMapping("/createUser")
+    public String createUser(@RequestBody User user){
+
+        return userService.createUser(user);
     }
+
 }

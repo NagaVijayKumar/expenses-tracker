@@ -26,8 +26,9 @@ public class UserRepositoryImpl implements UserRepository {
 
     @Override
     public User getUserByEmail(String email) {
-        return mongoTemplate.findById(email,User.class);
+        User user =  mongoTemplate.findById(email,User.class);
 
+        return user;
     }
 
 }

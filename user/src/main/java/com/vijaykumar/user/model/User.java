@@ -8,10 +8,10 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class User {
     @Id
     @Indexed(unique = true)
-    String email;
+    private String email;
 
-    String firstName;
-    String lastName;
+    private String firstName;
+    private String lastName;
 
 
 

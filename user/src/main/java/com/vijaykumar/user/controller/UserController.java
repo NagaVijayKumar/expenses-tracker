@@ -24,5 +24,13 @@ public class UserController {
         return userService.getUserByEmail(email);
     }
 
+    @GetMapping("/addExpense/{email}")
+    public String addExpense(){
+        return "";
+    }
 
+    @GetMapping("/getTotalDue")
+    public String getTotalDue(){
+        return "";
+    }
 }

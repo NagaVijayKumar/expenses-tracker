@@ -1,26 +1,24 @@
 package com.vijaykumar.user.model;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collation = "jb-user")
 public class User {
     @Id
-    String Id;
+    @Indexed(unique = true)
+    String email;
 
     String firstName;
     String lastName;
-    String email;
+
+
 
     public User() {
     }
 
-    public User(String id, String firstName, String lastName, String email) {
-        Id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-    }
+
 
     public User(String firstName, String lastName, String email) {
         this.firstName = firstName;
@@ -28,13 +26,6 @@ public class User {
         this.email = email;
     }
 
-    public String getId() {
-        return Id;
-    }
-
-    public void setId(String id) {
-        Id = id;
-    }
 
     public String getFirstName() {
         return firstName;
@@ -63,7 +54,6 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                "Id='" + Id + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +

@@ -13,10 +13,19 @@ public class UserServiceImpl implements UserService {
     @Autowired
     UserRepository userRepository;
 
+    @Autowired
+    UserUtils userUtils;
+
     @Override
     public String createUser(User user) {
-        userRepository.save(user);
+        userRepository.saveUser(user);
         return "User Created Successfully";
+    }
+
+    @Override
+    public User getUserByEmail(String email) {
+        return userRepository.getUserByEmail(email);
+//        return null;
     }
 
 }

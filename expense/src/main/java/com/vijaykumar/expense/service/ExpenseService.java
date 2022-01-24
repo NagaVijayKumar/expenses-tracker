@@ -1,2 +1,10 @@
-package com.vijaykumar.expense.service;public class ExpenseService {
+package com.vijaykumar.expense.service;
+
+import com.vijaykumar.expense.model.Expense;
+
+public interface ExpenseService {
+
+    String addExpense(Expense expense);
+
+    long getDueAmount(String email);
 }

@@ -10,18 +10,17 @@ public class Expense {
     private long amount;
     private String reason;
     private PaymentMode paymentMode;
-    private long totalDue;
+
     private long createdTime;
 
     public Expense() {
     }
 
-    public Expense(String email, long amount, String reason, PaymentMode paymentMode, long createdTime, long totalDue) {
+    public Expense(String email, long amount, String reason, PaymentMode paymentMode, long createdTime) {
         this.email = email;
         this.amount = amount;
         this.reason = reason;
         this.paymentMode = paymentMode;
-        this.totalDue = totalDue;
         this.createdTime = createdTime;
     }
 
@@ -66,22 +65,14 @@ public class Expense {
         this.createdTime = createdTime;
     }
 
-    public long getTotalDue() {
-        return totalDue;
-    }
-
-    public void setTotalDue(long totalDue) {
-        this.totalDue = totalDue;
-    }
-
     @Override
     public String toString() {
         return "Expense{" +
-                ", email='" + email + '\'' +
+                "email='" + email + '\'' +
                 ", amount=" + amount +
                 ", reason='" + reason + '\'' +
                 ", paymentMode=" + paymentMode +
-                ", createdTime='" + createdTime + '\'' +
+                ", createdTime=" + createdTime +
                 '}';
     }
 }

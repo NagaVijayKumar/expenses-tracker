@@ -22,10 +22,4 @@ public class ExpensesController {
 
         return expenseService.addExpense(expense);
     }
-
-    @GetMapping(path = "/getDue/{email}")
-    public int getDueAmount(@PathVariable String email){
-
-        return 0;
-    }
 }

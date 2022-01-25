@@ -6,5 +6,4 @@ public interface ExpenseService {
 
     String addExpense(Expense expense);
 
-    long getDueAmount(String email);
 }

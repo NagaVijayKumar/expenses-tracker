@@ -12,6 +12,7 @@ public class User {
 
     private String firstName;
     private String lastName;
+    private long DueAmount;
 
 
 
@@ -20,12 +21,17 @@ public class User {
 
 
 
+    public User(String firstName, String lastName, String email, long DueAmount) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.DueAmount = DueAmount;
+    }
     public User(String firstName, String lastName, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
     }
-
 
     public String getFirstName() {
         return firstName;
@@ -51,12 +57,21 @@ public class User {
         this.email = email;
     }
 
+    public long getDueAmount() {
+        return DueAmount;
+    }
+
+    public void setDueAmount(long dueAmount) {
+        DueAmount = dueAmount;
+    }
+
     @Override
     public String toString() {
         return "User{" +
+                "email='" + email + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", email='" + email + '\'' +
+                ", DueAmount=" + DueAmount +
                 '}';
     }
 }

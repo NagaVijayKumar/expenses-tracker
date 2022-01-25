@@ -28,4 +28,15 @@ public class UserServiceImpl implements UserService {
 //        return null;
     }
 
+    @Override
+    public User updateUserByEmail(String email, User user) {
+
+        User usr = getUserByEmail(email);
+        if(usr==null)
+            return null;
+        User updatedUser = new User(user.getFirstName(),user.getLastName(),user.getEmail(), user.getDueAmount());
+        userRepository.saveUser(updatedUser);
+        return updatedUser;
+    }
+
 }

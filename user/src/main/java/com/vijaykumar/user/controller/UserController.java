@@ -13,7 +13,7 @@ public class UserController {
     @Autowired
     UserService userService;
 
-    @PostMapping("/createUser")
+    @PostMapping("/saveUser")
     public String createUser(@RequestBody User user){
 
         return userService.createUser(user);
@@ -24,13 +24,14 @@ public class UserController {
         return userService.getUserByEmail(email);
     }
 
-    @GetMapping("/addExpense/{email}")
-    public String addExpense(){
-        return "";
+    @PutMapping("/updateUser/{email}")
+    public User updateUser(@PathVariable(value = "email") String email,
+                           @RequestBody User user){
+        return userService.updateUserByEmail(email, user);
     }
 
     @GetMapping("/getTotalDue")
-    public String getTotalDue(){
-        return "";
+    public long getTotalDue(){
+        return 0;
     }
 }

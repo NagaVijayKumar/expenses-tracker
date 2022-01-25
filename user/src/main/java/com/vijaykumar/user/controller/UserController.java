@@ -30,8 +30,14 @@ public class UserController {
         return userService.updateUserByEmail(email, user);
     }
 
-    @GetMapping("/getTotalDue")
-    public long getTotalDue(){
-        return 0;
+    @GetMapping("/getTotalDue/{email}")
+    public long getTotalDue(@PathVariable String email){
+        return userService.getDueAmount(email);
+    }
+
+    @PostMapping("/clearDue/{email}/{paidAmount}")
+    public String clearDue(@PathVariable(value = "email") String email,@PathVariable(value = "paidAmount") long paidAmount){
+
+        return userService.clearDueAmount(email,paidAmount);
     }
 }

@@ -12,4 +12,7 @@ public interface UserService {
 
     User updateUserByEmail(String email, User user);
 
+    long getDueAmount(String email);
+
+    String clearDueAmount(String email, long paidAmount);
 }
